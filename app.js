@@ -17,7 +17,7 @@ function drawSongs(songList){
         </div>
         <div class="text-container">
           <p><b>${song.title}</b> &mdash; <em>${song.artist}</em> — Album: '${song.collection}' &mdash; $${song.price}</p>
-          <audio controls preload="none" style="width:250px;">
+          <audio controls preload="none">
           <source src="${song.preview}" type="audio/mp4" /></audio>
         </div>
       </div>`
