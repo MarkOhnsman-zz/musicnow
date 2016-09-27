@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MusicNow</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+        <form class="form-inline">
+        <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+        <div class="form-group">
+          <input type="text" class="form-control" id="artist" placeholder="Artist Name"/>
+          <button type="button" class="btn btn-primary" id="get-music-button" onclick="getMusic()">Get Music</button>
+        </div>
+      </form>
+      
+      
+      <div id="songs">
+          <!--PLACEHOLDER-->
+        <div class="img-container">
+          <img src="http://placehold.it/25x25"/>
+        </div>
+        <div class="text-container">
+          <p>"songTitle" - "Artist" - "Album"</p>
+          <audio controls preload="none" style="width:250px;">
+          <source src="" type="audio/mp4" /></audio>
+          <p>"Price"</p>
+        </div>
+      </div>
+</body>
+</html>
