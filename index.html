@@ -18,7 +18,7 @@
     <form class="form-inline">
         <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
         <div class="form-group">
-            <input type="text" class="form-control" id="artist" placeholder="Artist/Song..."/>
+            <input type="text" class="form-control" id="artist" placeholder="Artist/Song..."  onkeydown="if (event.keyCode == 13) { getMusic(); return false; }"/>
             <button type="submit" class="btn btn-primary" id="get-music-button">Get Music</button>
         </div>
     </form>
