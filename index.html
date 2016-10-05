@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="welcome text-center">
-    <h1>MusicNow!</h1>
-    <h4>Your Music, Right Now</h4>
-    
-    <form class="form-inline" id="art-search">
-        <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
-        <div class="form-group">
-            <input type="text" class="form-control" name="artist" id="artist" placeholder="Artist..." />
-            <button type="submit" class="btn btn-info" id="get-music-button">Search New Music</button>
-            <button type="button" class="btn btn-default my-music" id="my-music">Get My MusicNow!</button>
-        </div>
-    </form>
+        <h1>MusicNow!</h1>
+        <h4>Your Music, Right Now</h4>
+
+        <form class="form-inline" id="art-search">
+            <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+            <div class="form-group">
+                <input type="text" class="form-control" name="artist" id="artist" placeholder="Artist..." />
+                <button type="submit" class="btn btn-info" id="get-music-button">Search New Music</button>
+                <button type="button" class="btn btn-default my-music" id="my-music">Get My MusicNow!</button>
+            </div>
+        </form>
     </div>
 
 
@@ -28,16 +29,27 @@
         <!--PLACEHOLDER-->
         <!--<div class="song">
             <div class="img-container">
-                <img src="http://placehold.it/25x25" />
+                <img src="${song.albumArt}" />
             </div>
-            <div class="information text-container">
-                <p>"songTitle" - "Artist" - "Album"</p>
-                <audio controls preload="none" style="width:250px;">
-                    <source src="" type="audio/mp4" />
+            <div class="text-container">
+                <p><b>${song.title}</b> &mdash; <em>${song.artist}</em> — Album: '${song.collection}' &mdash; $${song.price}</p>
+                <audio controls preload="none">
+                    <source src="${song.preview}" type="audio/mp4" />
                 </audio>
-                <p>"Price"</p>
-            </div>-->
-        </div>
+            </div>
+            <div class="controls">
+                `<button class="remove">
+                    <i id="${song.id}" class="fa fa-minus-square" aria-hidden="true"></i>
+                  </button>
+                  <button class="prom">
+                    <i id="${song.id}" class="fa fa-chevron-up" aria-hidden="true"></i>
+                  </button>
+                  <button class="dem">
+                  <i id="${song.id}" class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+            </div>
+        </div>`-->
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <script src="itunes-service.js"></script>

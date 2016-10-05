@@ -10,11 +10,20 @@ function Controller() {
     for (var i = 0; i < songList.length; i++) {
       var song = songList[i]
       if (control == 'remove') {
-        button = `<button class="remove"><i id="${song.id}" class="fa fa-minus-square" aria-hidden="true"></i></span></button>
-                  <button class="prom"><i id="${song.id}" class="fa fa-chevron-up" aria-hidden="true"></i></button>
-                  <button class="dem"><i id="${song.id}" class="fa fa-chevron-down" aria-hidden="true"></i></button>`
+        button = `<button class="remove">
+                    <i id="${song.id}" class="fa fa-minus-square" aria-hidden="true"></i>
+                  </button>
+                  <button class="prom">
+                    <i id="${song.id}" class="fa fa-chevron-up" aria-hidden="true"></i>
+                  </button>
+                  <button class="dem">
+                  <i id="${song.id}" class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  `
       } else {
-        button = `<button class="add"><i id="${song.id}" class="fa fa-plus-square" aria-hidden="true"></i></button>`
+        button = `<button class="add">
+                    <i id="${song.id}" class="fa fa-plus-square" aria-hidden="true"></i>
+                  </button></div>`
       }
       template += `
       <div class="song">
@@ -24,7 +33,10 @@ function Controller() {
         <div class="text-container">
           <p><b>${song.title}</b> &mdash; <em>${song.artist}</em> — Album: '${song.collection}' &mdash; $${song.price}</p>
           <audio controls preload="none">
-          <source src="${song.preview}" type="audio/mp4" /></audio>` + button + `
+          <source src="${song.preview}" type="audio/mp4" /></audio>
+        </div>
+        <div class="controls">
+        `+button+`
         </div>
       </div>`
     }
@@ -51,7 +63,7 @@ function Controller() {
     var form = event.target;
     var artist = form.artist.value
     dataStore.getMusicByArtist(artist).then(drawSongs, 'add');
-  })
+  });
   $('#art-search').on('click', 'button.my-music', function (event) {
     drawSongs(dataStore.getMyMusic(), 'remove')
   })
