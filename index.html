@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>MusicNow</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,11 +13,12 @@
     <h1>MusicNow!</h1>
     <h4>Your Music, Right Now</h4>
     
-    <form class="form-inline">
+    <form class="form-inline" id="art-search">
         <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
         <div class="form-group">
-            <input type="text" class="form-control input-sm" id="artist" placeholder="Artist..."  onkeydown="if (event.keyCode == 13) { getMusic(); return false; }"/>
-            <button type="button" class="btn btn-primary" id="get-music-button" onclick="getMusic()">Get Music</button>
+            <input type="text" class="form-control" name="artist" id="artist" placeholder="Artist..." />
+            <button type="submit" class="btn btn-info" id="get-music-button">Search New Music</button>
+            <button type="button" class="btn btn-default my-music" id="my-music">Get My MusicNow!</button>
         </div>
     </form>
     </div>

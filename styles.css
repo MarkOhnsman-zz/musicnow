@@ -18,7 +18,7 @@ body{
     margin: 8px;
     background-color: rgba(255, 255, 255, 0.8);
     width: 600px;
-    border: 2px, solid, white;
+    border: 2px solid white;
 }
 .img-container{
     margin: 6px;
@@ -33,4 +33,9 @@ body{
 }
 h3{
     color: ghostwhite;
+}
+.text-container button{
+    background: none;
+    border: none;
+    font-size: 25px;
 }
