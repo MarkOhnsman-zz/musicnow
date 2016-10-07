@@ -56,6 +56,9 @@ function getMyMusic() {
   dataStore.promoteTrack = function (songId) {
     for (var i = 0; i < _myTracks.myMusic.length; i++)
       if (_myTracks.myMusic[i].id == songId) {
+        if(i==0){
+          return
+        }
         _myTracks.myMusic.splice(i - 1, 0, _myTracks.myMusic.splice(i, 1)[0]);
         _saveTracks()
       }

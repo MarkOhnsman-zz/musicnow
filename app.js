@@ -11,18 +11,18 @@ function Controller() {
       var song = songList[i]
       if (control == 'remove') {
         button = `<button class="remove">
-                    <i id="${song.id}" class="fa fa-minus-square" aria-hidden="true"></i>
+                    <i id="${song.id}" class="fa fa-minus-square" title="Remove from List" aria-hidden="true"></i>
                   </button>
                   <button class="prom">
-                    <i id="${song.id}" class="fa fa-chevron-up" aria-hidden="true"></i>
+                    <i id="${song.id}" class="fa fa-chevron-up" title="Promote" aria-hidden="true"></i>
                   </button>
                   <button class="dem">
-                  <i id="${song.id}" class="fa fa-chevron-down" aria-hidden="true"></i>
+                  <i id="${song.id}" class="fa fa-chevron-down" title="Demote" aria-hidden="true"></i>
                   </button>
                   `
       } else {
         button = `<button class="add">
-                    <i id="${song.id}" class="fa fa-plus-square" aria-hidden="true"></i>
+                    <i id="${song.id}" class="fa fa-plus-square" title="Add to List" aria-hidden="true"></i>
                   </button></div>`
       }
       template += `
