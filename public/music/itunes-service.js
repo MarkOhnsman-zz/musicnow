@@ -6,7 +6,7 @@ function getMyMusic() {
   function _loadTracks() {
     var tracks = localStorage.getItem('my-tracks')
     if (tracks) {
-      tracks = JSON.parse(tracks)
+      tracks = JSON.parse(tracks) 
     } else {
       tracks = {
         myMusic: []

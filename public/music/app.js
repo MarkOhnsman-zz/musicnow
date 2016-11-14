@@ -4,7 +4,7 @@ function Controller() {
   var dataStore = new getMyMusic()
 
   function drawSongs(songList, control) {
-    var songElement = $('#allsongs')
+    var songElement = $('#allsongs') 
     var template = `<h3>Song Results Found: ${songList.length}</h3>`
     var button = ''
     for (var i = 0; i < songList.length; i++) {

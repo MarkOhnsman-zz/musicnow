@@ -33,14 +33,19 @@ schemator.defineSchema('Playlist', {
 
 function create(newList, cb) {
   // Use the Resource Model to create a new playlist
+  var songId = newList.song.id
   let playlist = { 
     id: uuid.v4(),
     name: newList.name,
     upvotes: 0,
     downvotes: 0,
-    songs: newList.songs
+    songs:{
+        [songId]: newList.song
+    }
   }
-  Playlists.create(playlist).then(cb).catch(cb)
+  Playlists.create(playlist)
+  .then(cb)
+  .catch(cb)
 }
 
 function getAll(query, cb) {
@@ -64,11 +69,36 @@ function addSong(song, playlistId, cb){
     }).catch(cb)
 }
 
+function countVote(vote, cb){
+    Playlists.find(vote.playlistId).then(function(playlist){
+        if(vote.vote == 'up'){
+            playlist.upvotes++
+        }else{
+            playlist.downvotes++
+        }
+        Playlists.update(playlist.id, playlist).then(function(){
+            DS.update('playlist', playlist.id, playlist)
+            .then(cb)
+            .catch(cb)
+        }).catch(cb)
+}).catch(cb)
+}
+
+function deleteSong(playlistId, songId, cb){
+    Playlists.find(playlistId).then(function(playlist){
+        playlist.songs[songId] = null
+        Playlists.update(playlist.id, playlist)
+             .then(cb)
+            .catch(cb)
+        }).catch(cb)
+}
 
 module.exports = {
   create,
   getAll,
   getById,
-  addSong
+  addSong,
+  countVote,
+  deleteSong
 }
 
