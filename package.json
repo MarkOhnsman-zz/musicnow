@@ -1,0 +1,35 @@
+{
+  "name": "musicnow",
+  "version": "1.0.0",
+  "description": "A music searching app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "6.3.1",
+    "npm": "3.9.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "firebase": "^2.4.2",
+    "js-data": "^2.9.0",
+    "js-data-firebase": "^2.1.1",
+    "js-data-schema": "^1.2.5",
+    "node-uuid": "^1.4.7",
+    "socket.io": "^1.5.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkOhnsman/musicnow.git"
+  },
+  "author": "Mark Ohnsman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkOhnsman/musicnow/issues"
+  },
+  "homepage": "https://github.com/MarkOhnsman/musicnow#readme"
+}
